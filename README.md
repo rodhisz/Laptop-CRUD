@@ -1,10 +1,10 @@
-<h1>Laptop - CRUD</h1>
+# Laptop - CRUD
 
 This simple project is created for CRUD in Laravel, in case I forget how to do it hehe
 
 =============================
 
-<h4>🔰 In This Project 🔰</h4>
+## 🔰 In This Project 🔰
 
 - [x] CRUD
 - [x] Image Upload
@@ -13,9 +13,14 @@ This simple project is created for CRUD in Laravel, in case I forget how to do i
 
 =============================
 
-<h4>🔰 Step by step 🔰</h4>
+## 🔰 Step by step 🔰
 
-1. Instalasi laravel dengan `composer create-project laravel/laravel nama_project` atau buka dokumentasinya langsung `https://laravel.com/`
+1. Instalasi laravel dengan 
+
+    composer create-project laravel/laravel nama_project
+
+atau buka dokumentasinya langsung [laravel](https://laravel.com/)
+
 2. Buat database baru di database local kalian
 3. Buka `.env` dan ubah nama `DB_DATABASE` dengan nama database yang sudah dibuat, lalu sesuaikan `DB_USERNAME`, dan `DB_PASSWORD` dengan apapun yang kalian pakai
 4. Masih di `.env` ganti `FILESYSTEM_DISK=local` menjadi `FILESYSTEM_DISK=public` karna kita akan mengupload gambar
