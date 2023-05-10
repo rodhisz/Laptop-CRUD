@@ -78,25 +78,25 @@ karna kita akan mengupload gambar
 
     php artisan serve
 
-10 -. Mulai templating blade dengan membuat `template.blade.php` dengan menambahkan
+10 - Mulai templating blade dengan membuat `template.blade.php` dengan menambahkan
 
     @yield(nama_yield) 
 pada tag body, untuk project ini saya menggunakan [Bootsrap](https://getbootstrap.com/) sebagai template utama.
 
-11 -. Lalu buatlah folder sesuai dengan nama `Controller` yang sudah dibuat, lalu buat `index.blade.php` dengan tambahkan `@extends('template')` dan `@section('nama_yield')` di awal dan `@endsection` di akhir seperti contoh berikut :
+11 - Lalu buatlah folder sesuai dengan nama `Controller` yang sudah dibuat, lalu buat `index.blade.php` dengan tambahkan `@extends('template')` dan `@section('nama_yield')` di awal dan `@endsection` di akhir seperti contoh berikut :
 
     @extends('template')
 
     @section('content')
     @endsection
 
-12 -. Di folder `routes` di `web.php` buat route sesuai dengan `Controller` yang sudah dibuat, bisa menggunakan
+12 - Di folder `routes` di `web.php` buat route sesuai dengan `Controller` yang sudah dibuat, bisa menggunakan
 
     Route::resource('/nama_route', nama_controller::class)
     atau 
     Route::post('/nama_route',[nama_controller::class,'nama_method']); 
 
-13 -. Pada file controller isi setiap method yang sudah ada seperti contoller yang ada di file `LaptopController.php` pada project ini (Ubah code pada controller jika laravel sudah update dan ada perubahan syntax)
+13 - Pada file controller isi setiap method yang sudah ada seperti contoller yang ada di file `LaptopController.php` pada project ini (Ubah code pada controller jika laravel sudah update dan ada perubahan syntax)
 
 ## 🔰 Don't forget
 
