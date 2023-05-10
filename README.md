@@ -11,12 +11,7 @@ This simple project is created for CRUD in Laravel, in case I forget how to do i
 
 ### 🔰 Step by step 🔰
 
-### Installing
-
-A step by step series of examples that tell you how to get a development
-environment running
-
-Say what the step will be
+1. Instalasi laravel dengan 
 
     composer create-project laravel/laravel nama_project
 
