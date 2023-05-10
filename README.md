@@ -2,18 +2,14 @@
 
 This simple project is created for CRUD in Laravel, in case I forget how to do it hehe
 
-=============================
-
-## 🔰 In This Project 🔰
+### 🔰 In This Project 🔰
 
 - [x] CRUD
 - [x] Image Upload
 - [ ] Auth
 - [ ] Middleware
 
-=============================
-
-## 🔰 Step by step 🔰
+### 🔰 Step by step 🔰
 
 ### Installing
 
