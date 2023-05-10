@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [LaptopController::class, 'index']);
+
+//Create
+Route::get('/add', [LaptopController::class, 'create']); //ini view
+Route::post('/add-laptop', [LaptopController::class, 'store']); //ini proses
+
+//Read
+//project ini tidak memakai halaman detail
+
+//Update
+Route::get('/edit/{id}', [LaptopController::class, 'edit']); //ini view
+Route::put('/edit-laptop/{id}', [LaptopController::class, 'update']); //ini proses
+
+//Delete
+Route::delete('/delete-laptop/{id}', [LaptopController::class, 'destroy']); //ini proses

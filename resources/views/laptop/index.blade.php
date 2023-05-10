@@ -7,7 +7,7 @@
                 <h2>Crud</h2>
             </a>
             <form class="d-flex">
-                <a href="" class="btn btn-success" type="submit">Create</a>
+                <a href="{{ url('/add') }}" class="btn btn-success" type="submit">Create</a>
             </form>
         </div>
     </nav>
@@ -21,23 +21,24 @@
                 <th>Image</th>
                 <th>Action</th>
             </tr>
-
-            <tr class="text-center" style="vertical-align: 10px">
-                <th>1</th>
-                <td>ROG</td>
-                <td>Rp. 10.000.000</td>
-                <td>
-                    <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2022/3/22/8632b7db-fb78-4116-b431-2c4935d1768f.jpg"
-                        style="max-width: 100px !important" alt="">
-                </td>
-                <td>
-                    <form class="container" action="" enctype="multipart/form-data">
-                        <a href="" class="btn btn-warning" type="submit">Edit</a>
-                        <button type="submit" href="" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-
+            @foreach ($laptop as $l)
+                <tr class="text-center" style="vertical-align: 10px">
+                    <th>{{ $loop->iteration }}</th>
+                    <td>{{ $l->name }}</td>
+                    <td>Rp. {{ number_format($l->price) }}</td>
+                    <td>
+                        <img src="{{ url('storage/' . $l->image) }}" style="max-width: 100px !important" alt="">
+                    </td>
+                    <td>
+                        <form class="container" action="{{url("delete-laptop/$l->id")}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('DELETE')
+                            <a href="{{ url("/edit/$l->id") }}" class="btn btn-warning">edit</a>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
         </table>
     </div>
 @endsection

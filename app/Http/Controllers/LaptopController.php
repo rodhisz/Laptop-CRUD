@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Laptop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LaptopController extends Controller
 {
@@ -14,7 +15,15 @@ class LaptopController extends Controller
      */
     public function index()
     {
-        return view('laptop.index');
+        $laptop = Laptop::all();
+
+        //cara 1
+        // return view('laptop.index', [
+        //     'laptop' => $laptop
+        // ]);
+
+        //cara 2
+        return view('laptop.index', compact('laptop'));
     }
 
     /**
@@ -24,7 +33,7 @@ class LaptopController extends Controller
      */
     public function create()
     {
-        //
+        return view('laptop.create');
     }
 
     /**
@@ -35,7 +44,12 @@ class LaptopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Laptop::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'image' => $request->file('image')->store('laptop')
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -55,9 +69,10 @@ class LaptopController extends Controller
      * @param  \App\Models\Laptop  $laptop
      * @return \Illuminate\Http\Response
      */
-    public function edit(Laptop $laptop)
+    public function edit($id)
     {
-        //
+        $laptop = Laptop::find($id);
+        return view('laptop.edit', compact('laptop'));
     }
 
     /**
@@ -67,9 +82,28 @@ class LaptopController extends Controller
      * @param  \App\Models\Laptop  $laptop
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Laptop $laptop)
+    public function update(Request $request, $id)
     {
-        //
+        if (empty($request->file('image'))) {
+            $laptop = Laptop::find($id);
+
+            $laptop->update([
+                'name' => $request->name,
+                'price' => $request->price,
+            ]);
+
+            return redirect('/');
+        } else {
+            $laptop = Laptop::find($id);
+
+            $laptop->update([
+                'name' => $request->name,
+                'price' => $request->price,
+                'image' => $request->file('image')->store('laptop')
+            ]);
+
+            return redirect('/');
+        }
     }
 
     /**
@@ -78,8 +112,13 @@ class LaptopController extends Controller
      * @param  \App\Models\Laptop  $laptop
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Laptop $laptop)
+    public function destroy(Laptop $laptop, $id)
     {
-        //
+        $laptop = Laptop::find($id);
+
+        Storage::delete($laptop->image); //ngapus gambar
+        $laptop->delete(); //ngapus data
+
+        return redirect('/');
     }
 }
