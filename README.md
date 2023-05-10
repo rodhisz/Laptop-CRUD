@@ -15,8 +15,8 @@ This simple project is created for CRUD in Laravel, in case I forget how to do i
 
 <h4>🔰 Step by step 🔰</h4>
 
-1. Instalasi laravel dengan `composer create-project laravel/laravel nama_project`
-2. Buat database baru di xampp
+1. Instalasi laravel dengan `composer create-project laravel/laravel nama_project` atau buka dokumentasinya langsung `https://laravel.com/`
+2. Buat database baru di database local kalian
 3. Buka `.env` dan ubah nama `DB_DATABASE` dengan nama database yang sudah dibuat, lalu sesuaikan `DB_USERNAME`, dan `DB_PASSWORD` dengan apapun yang kalian pakai
 4. Masih di `.env` ganti `FILESYSTEM_DISK=local` menjadi `FILESYSTEM_DISK=public` karna kita akan mengupload gambar
 5. Buat `Model`, `Controller`, `Migration` bersamaan dengan `php artisan make:Model nama_model -rm` di terminal
@@ -55,4 +55,5 @@ This simple project is created for CRUD in Laravel, in case I forget how to do i
 
 =============================
 <h4>🔥 Terima Kasih, Semoga Bermanfaat 🔥</h4>
+
 Repo dan step by step ini teruntuk murid murid saya di `SMK IDN Boarding School Bogor` biar kalau lupa tinggal buka repo ini yaa hehe. Sukses yaa temen temen
