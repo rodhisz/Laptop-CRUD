@@ -21,7 +21,7 @@ atau buka dokumentasinya langsung [Laravel](https://laravel.com/).
 
 #### 2. Buat database baru di database local kalian.
 
-#### 3. Buka `.env` dan ubah 
+3 - Buka `.env` dan ubah 
     
     DB_DATABASE = nama database yang sudah dibuat
     DB_USERNAME = username database local kalian
@@ -175,3 +175,11 @@ Repo dan step by step ini teruntuk murid murid kelas XI RPL saya di `SMK IDN Boa
 
 <h4>💡 Preview 💡</h4>
 <img src="/public/preview" alt="Prev"/>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
