@@ -58,4 +58,4 @@ This simple project is created for CRUD in Laravel, in case I forget how to do i
 Repo dan step by step ini teruntuk murid murid saya di `SMK IDN Boarding School Bogor` biar kalau lupa tinggal buka repo ini yaa hehe. Sukses yaa temen temen
 
 <h4>💡 Preview 💡</h4>
-<img src="Preview" alt="Prev"/>
+<img src="/public/preview" alt="Prev"/>
