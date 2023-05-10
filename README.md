@@ -15,11 +15,20 @@ This simple project is created for CRUD in Laravel, in case I forget how to do i
 
 ## 🔰 Step by step 🔰
 
+### Installing
+
+A step by step series of examples that tell you how to get a development
+environment running
+
+Say what the step will be
+
+    composer create-project laravel/laravel nama_project
+
 1. Instalasi laravel dengan 
 
     composer create-project laravel/laravel nama_project
 
-atau buka dokumentasinya langsung [laravel](https://laravel.com/)
+atau buka dokumentasinya langsung [Laravel](https://laravel.com/)
 
 2. Buat database baru di database local kalian
 3. Buka `.env` dan ubah nama `DB_DATABASE` dengan nama database yang sudah dibuat, lalu sesuaikan `DB_USERNAME`, dan `DB_PASSWORD` dengan apapun yang kalian pakai
