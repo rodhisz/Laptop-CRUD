@@ -175,7 +175,7 @@ for windows
 
 Repo dan step by step ini teruntuk murid murid kelas XI RPL saya di `SMK IDN Boarding School Bogor` biar kalau lupa tinggal buka repo ini yaa hehe. Sukses yaa temen temen
 
-## 💡 Preview
+## 💡 Project Preview
 <img src="/img/preview.png" alt="Prev"/>
 
 
