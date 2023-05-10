@@ -1,17 +1,26 @@
-# 💻 Laptop - CRUD
-This simple project is created for CRUD in Laravel, in case I forget how to do it hehe
-## 🔰 Build With
-[![Laravel][Laravel.com]][Laravel-url] [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+<div align="center">
+<h1>💻 Laptop - CRUD</h1>
 
+<h4>This simple project is created for CRUD in Laravel, in case I forget how to do it hehe 😅</h4>
 
-## 🔰 This Project 
+<img src="/img/preview.png" alt="Prev"/>
+
+<p>
+    <a href="https://laravel.com/">
+    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/></a>
+    <a href="https://getbootstrap.com">
+    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
+</p>
+</div>
+
+## 🔰 This Project
 
 - [x] CRUD
 - [x] Image Upload
 - [ ] Auth
 - [ ] Middleware
 
-## 🔰 Step by step 
+## 🔰 Step by step
 
 1 - Instalasi laravel dengan
 
@@ -21,8 +30,8 @@ atau buka dokumentasinya langsung [Laravel](https://laravel.com/).
 
 2 - Buat database baru di database local kalian.
 
-3 - Buka `.env` dan ubah 
-    
+3 - Buka `.env` dan ubah
+
     DB_DATABASE = nama database yang sudah dibuat
     DB_USERNAME = username database local kalian
     DB_PASSWORD = password database local kalian
@@ -37,7 +46,6 @@ karna kita akan mengupload gambar
 4 - Buat `Model`, `Controller` & `Migration` secara bersamaan dengan di terminal dengan mengetik ini
 
     php artisan make:Model nama_model -rm
-
 
 5 - Di `Model` buat `$fillable` atau `$guarded` dengan visibilitas `protected` seperti ini :
 
@@ -63,14 +71,14 @@ karna kita akan mengupload gambar
     php artisan storage:link 
 
 8 - Lakukan migrate dengan
-    
+
     php artisan migrate
 
 9 - Lalu coba jalankan project dengan
 
     php artisan serve
 
-10 -. Mulai templating blade dengan membuat `template.blade.php` dengan menambahkan 
+10 -. Mulai templating blade dengan membuat `template.blade.php` dengan menambahkan
 
     @yield(nama_yield) 
 pada tag body, untuk project ini saya menggunakan [Bootsrap](https://getbootstrap.com/) sebagai template utama.
@@ -90,7 +98,7 @@ pada tag body, untuk project ini saya menggunakan [Bootsrap](https://getbootstra
 
 13 -. Pada file controller isi setiap method yang sudah ada seperti contoller yang ada di file `LaptopController.php` pada project ini (Ubah code pada controller jika laravel sudah update dan ada perubahan syntax)
 
-## 🔰 Don't forget 
+## 🔰 Don't forget
 
 1 - Untuk menampilkan data di `index.blade.php` bisa menggunakan `@foreach` dan panggil variable yang sudah kalian buat di controller method `index`, seperti contoh ini :
 
@@ -143,15 +151,15 @@ Di Blade
 
 7 - Ketika upload gambar pastikan gambar terduplikat sendiri di file `public/storage/nama_folder` kalian
 
-## 🔰 How to use this repo 
+## 🔰 How to use this repo
 
 1 - Clone this repository
 
     git clone https://github.com/rodhisz/Laptop-CRUD.git
-2 - Run 
+2 - Run
 
     composer install
-3 - Run 
+3 - Run
 for macOS or linux
 
     cp .env.example .env
@@ -162,26 +170,18 @@ for windows
 
 4 - Open your .env file and change the database name (`DB_DATABASE`) to whatever you have, username (`DB_USERNAME`) and password (`DB_PASSWORD`) field correspond to your configuration.
 
-5 - Run 
+5 - Run
 
     php artisan key:generate
-6 - Run 
+6 - Run
 
     php artisan serve
 
-## 🔥 Thank You !
+## 🔥 Thank You
 
 ### Semoga Bermanfaat 🔥
 
 Repo dan step by step ini teruntuk murid murid kelas XI RPL saya di `SMK IDN Boarding School Bogor` biar kalau lupa tinggal buka repo ini yaa hehe. Sukses yaa temen temen
 
-## 💡 Project Preview
-<img src="/img/preview.png" alt="Prev"/>
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
