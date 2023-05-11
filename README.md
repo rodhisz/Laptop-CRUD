@@ -175,9 +175,15 @@ for windows
 5 - Run
 
     php artisan key:generate
+
 6 - Run
 
+    php artisan migrate
+7 - And last run
+
     php artisan serve
+
+Happy Coding ✨
 
 ## 🔥 Thank You
 
