@@ -89,7 +89,7 @@ pada tag body, untuk project ini saya menggunakan [Bootsrap](https://getbootstra
     @extends('template')
 
     @section('content')
-    // code kalian
+      // code kalian
     @endsection
 
 12 - Di folder `routes` di `web.php` buat route sesuai dengan `Controller` yang sudah dibuat, bisa menggunakan
