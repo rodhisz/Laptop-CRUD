@@ -12,28 +12,6 @@ Made with :
     <a href="https://getbootstrap.com">
     <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/></a>
 </p>
-
-## Table of contents
-
- [This Project](##this-project)
-
- [Table of contents](#table-of-contents)
-
- [Usage](#usage)
-
- [Installation](#installation)
-
- [Recommended configurations](#recommended-configurations)
-
- [Custom configurations](#custom-configurations)
-
- [Updating](#updating)
-
- [Uninstallation](#uninstallation)
-
- [Contributing](#contributing)
-
- [License](#license)
 </div>
 
 
