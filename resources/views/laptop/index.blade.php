@@ -27,10 +27,15 @@
                     <td>{{ $l->name }}</td>
                     <td>Rp. {{ number_format($l->price) }}</td>
                     <td>
-                        <img src="{{ url('storage/' . $l->image) }}" style="max-width: 100px !important" alt="">
+                        @foreach ($l->images as $i)
+                            <img src="{{ asset('/storage/' . $i) }}" alt="multiple image"
+                                style="max-width: 100px !important">
+                        @endforeach
+                        {{-- <img src="{{ url('storage/' . $l->image) }}" style="max-width: 100px !important" alt=""> --}}
                     </td>
                     <td>
-                        <form class="container" action="{{url("delete-laptop/$l->id")}}" method="POST" enctype="multipart/form-data">
+                        <form class="container" action="{{ url("delete-laptop/$l->id") }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('DELETE')
                             <a href="{{ url("/edit/$l->id") }}" class="btn btn-warning">edit</a>

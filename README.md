@@ -191,5 +191,87 @@ Happy Coding ✨
 
 Repo dan step by step ini teruntuk murid murid kelas XI RPL saya di `SMK IDN Boarding School Bogor` biar kalau lupa tinggal buka repo ini yaa hehe. Sukses yaa temen temen
 
+## 🔰 Update
+
+Upload Multiple Image -> (16 Mei 2023)
+
+1 - Mengembalikan file system disk ke local
+
+```
+FILESYSTEM_DISK=local
+```
+
+2 - Karna image akan jadi array, tambahkan code berikut pada model `Laptop.php` menjadi :
+
+```php
+protected $casts = [
+    'images' => 'array'
+];
+```
+
+3 - Karna image akan diupload banyak maka nama di migration kita ubah menjadi plural
+
+```php
+$table->text('images')->nullable();
+```
+
+juga menambahkan `nullable()`
+
+4 - Mengganti function `Store` pada `LaptopController.php` menjadi seperti ini :
+
+```php
+// multiple image
+
+$data = $request->validate([
+    'name' => 'required|string|max:255',
+    'price' => 'required',
+    'images' => 'required|array'
+]);
+
+$images = [];
+
+foreach ($data['images'] as $image) {
+    $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
+    $image_path =  $image->storeAs('images', $fileName,'public');
+
+    array_push($images, $image_path);
+}
+
+$data['images'] = $images;
+
+Laptop::create($data);
+return redirect('/');
+```
+
+5 - Mengganti `name` pada tag `input` image menjadi `name="images[]"` dan menambahkan `multiple` agar dapat memilih lebih dari 1 gambar
+
+```php
+name="images[]" multiple
+```
+
+6 - Untuk memanggil gambar di `index.blade.php`, ganti :
+```php
+<img src="{{ url('storage/' . $l->image) }}" style="max-width: 100px !important" alt="">
+``` 
+menjadi
+```php
+@foreach ($l->images as $i)
+    <img src="{{ asset('/storage/' . $i) }}" alt="multiple image"
+        style="max-width: 100px !important">
+@endforeach
+```
+
+
+7 - Lakukan migrate fresh untuk merefresh database
+
+```
+php artisan migrate:fresh
+```
+
+8 - Preview
+<img src="/img/prev2.png" alt="Prev2"/>
+
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

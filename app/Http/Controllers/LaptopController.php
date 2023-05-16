@@ -44,12 +44,38 @@ class LaptopController extends Controller
      */
     public function store(Request $request)
     {
-        Laptop::create([
-            'name' => $request->name,
-            'price' => $request->price,
-            'image' => $request->file('image')->store('laptop')
+        // single image
+
+        // Laptop::create([
+        //     'name' => $request->name,
+        //     'price' => $request->price,
+        //     'image' => $request->file('image')->store('laptop')
+        // ]);
+        // return redirect('/');
+
+        // multiple image
+
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required',
+            'images' => 'required|array'
         ]);
+
+        $images = [];
+
+        foreach ($data['images'] as $image) {
+            $fileName = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image_path =  $image->storeAs('images', $fileName,'public');
+
+            array_push($images, $image_path);
+        }
+
+        $data['images'] = $images;
+
+        Laptop::create($data);
         return redirect('/');
+
+        // dd($request->images);
     }
 
     /**

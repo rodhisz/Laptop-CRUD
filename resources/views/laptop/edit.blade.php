@@ -23,7 +23,7 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image</label>
-            <input name="image" type="file" id="Content" class="form-control" id="image">
+            <input name="images[]" type="file" id="Content" class="form-control" id="image">
         </div>
         <button class="btn btn-primary" type="submit" >Submit</button>
     </form>
